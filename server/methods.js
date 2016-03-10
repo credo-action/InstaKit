@@ -66,6 +66,7 @@ var updatePageShare = function(page, loc, bitly) {
 									"image_homepage_100": page.pageGraphicHomePage,
 									"image_facebook_114": page.pageGraphicFacebook,
 									"taf_facebook_title": page.pageFacebookTitle,
+									"homepage_title": page.pageHomepageTitle,
 									"taf_facebook_copy": page.pageFacebookCopy,
 									"taf_tweet": updateTwitterForAK(page.pageTwitterCopy,bitly),
 									"therm_landing_page": 1
@@ -199,6 +200,7 @@ var updatePageShareForCreatedPage = function(page, loc, bitly) {
 									"image_homepage_100": page.pageGraphicHomePage,
 									"image_facebook_114": page.pageGraphicFacebook,
 									"taf_facebook_title": page.pageFacebookTitle,
+									"homepage_title": page.pageHomepageTitle,
 									"taf_facebook_copy": page.pageFacebookCopy,
 									"taf_tweet": updateTwitterForAK(page.pageTwitterCopy,bitly),
 									"therm_landing_page": 1

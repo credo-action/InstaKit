@@ -35,6 +35,13 @@ Template.templatePageFacebook.events({
   }
 });
 
+Template.templatePageHomepageTitle.events({
+   'keyup input[type=text]': function() {
+    Session.set("pageHomepageTitle", $('#pageHomepageTitle').val());
+    Session.set("pageHomepageLength", $('#pageHomepageTitle').val().length)
+  }
+});
+
 Template.templatePageTwitterCopy.events({
   'keyup textarea': function() {
     Session.set("pageTwitterCopy", $('#pageTwitterCopy').val());

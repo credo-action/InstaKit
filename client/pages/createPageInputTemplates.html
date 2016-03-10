@@ -12,6 +12,14 @@
 	</div>
 </template>
 
+<template name="templatePageHomepageTitle">
+	<div class="bodytext" >
+		<div class="bodytext_desc">Homepage Title</div>
+		<div class="taf_title"><input type="text" id="pageHomepageTitle" class="{{highlight "pageHomepageTitle"}}" value="{{getValue "pageHomepageTitle"}}" autofocus><br />
+		Between 30 and 49 characters, please. Current character count: <span style="color: #FF0000;">{{getValue 'pageHomepageLength'}}</span></div>
+	</div>
+</template>
+
 <template name="templatePageName">
 	<div class="bodytext" >
 		<div class="bodytext_desc">Short URL</div>
@@ -121,6 +129,7 @@ SUBJECT: {% include\_tmpl page.followup.taf\_subject escaped %}
 		<div class="taf_title"><input type="text" id="pageGraphicEmail" class="{{highlight "pageGraphicEmail"}}" value="{{getValue "pageGraphicEmail"}}"></div>
 	</div>
 </template>
+
 
 <template name="templatePageTags">
 	<div class="bodytext">

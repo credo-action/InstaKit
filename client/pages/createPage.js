@@ -29,6 +29,7 @@ setSessionVars = function() {
   Session.set("pageImportAboutText", converter.makeHtml(Session.get("pageAboutText")));
   Session.set("pageFacebookTitle", $('#pageFacebookTitle').val());
   Session.set("pageFacebookCopy", $('#pageFacebookCopy').val());
+  Session.set("pageHomepageTitle", $('#pageHomepageTitle').val());
   Session.set("pageTwitterCopy", removeCurlyQuotes($('#pageTwitterCopy').val()));
   Session.set("pageTAFSL", removeCurlyQuotes($('#pageTAFSL').val()));
   Session.set("pageTAFCopy", removeCurlyQuotes($('#pageTAFCopy').val()));
@@ -40,6 +41,7 @@ setSessionVars = function() {
   Session.set("pageGraphicFacebook", $('#pageGraphicFacebook').val());
   Session.set("pageGraphicHomePage", $('#pageGraphicHomePage').val());
   Session.set("pageFacebookLength", 260 - $('#pageFacebookCopy').val().length);
+  Session.set("pageHomepageLength", $('#pageHomepageTitle').val().length);
   var linkLength = $('#pageTwitterCopy').val().search(/{ *LINK *}/i) < 0 ? 23 : 16;
   Session.set("pageTwitterLength", 140 - linkLength - $('#pageTwitterCopy').val().length);
 }
@@ -65,6 +67,7 @@ makePageFromSession = function() {
     pageTAFCopy: standardizePageLinks(Session.get("pageTAFCopy")), // {LINK} is added if not present
     pageFacebookTitle: Session.get("pageFacebookTitle"),
     pageFacebookCopy: Session.get("pageFacebookCopy"),
+    pageHomepageTitle: Session.get("pageHomepageTitle"),
     pageTwitterCopy: standardizePageLinks(Session.get("pageTwitterCopy")), // {LINK} is added if not present
     pageConfEmailSL: Session.get("pageConfEmailSL"),
     pageConfEmailSender: Session.get("pageConfEmailSender"),
