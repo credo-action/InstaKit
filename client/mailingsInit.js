@@ -74,7 +74,7 @@ setSessionVarsForEmailFromPage = function (obj) {
   else if (Meteor.user().profile.name == 'Heidi Hess')
     Session.set("signature", "Heidi Hess, Senior Campaign Manager");
   else if (Meteor.user().profile.name == 'Murshed Zaheed')
-    Session.set("signature", "Murshed Zaheed, Deputy Political Director");
+    Session.set("signature", "Murshed Zaheed, Political Director");
   else Session.set('signature', Meteor.user().profile.name + ', Campaign Manager');
   Session.set("facebook", "");
   var twitter = obj.pageTwitterCopy.replace(/{ *LINK *}/i, obj.AKpageBitly);
