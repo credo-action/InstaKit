@@ -1,21 +1,21 @@
 ## InstaKit
 
-A Meteor.js app that simplifies the creation of ActionKit campaigns with ShareProgress after-action redirect pages.
+InstaKit is a Meteor.js app that simplifies the creation of ActionKit campaigns (pages and mailings) with ShareProgress after-action redirect pages. Abstract away the templates and wrappers and organization-standard requirements, and allow your campaigners to focus solely on the content of the page or mailing. Also automatically generate the mailing for a given page based upon the page content.
 
-This allows you to create AK pages of type:
+<a href="screenshots.md">**View screenshots here**</a>.
+
+You can create AK pages of type:
 * petition
 * letter
 * event
 
-For petition and letter pages, your SP pages will be automatically created and linked up.
+For petition and letter pages, your SP pages will be automatically created and linked up. You can set rules on the server-side for your organization-wide standard requirements (ex: "all pages are set to 'Recognize once', use the 'default' templateset, and be tagged 'awesome sauce') so that the campaigners don't need to remember to do these things.
 
-Event pages use the standard /thanks template in your AK instance. The event campaign will be created as well as the any subevents that you might want to set up at the same time. This is primarily geared towards centrally-hosted events
+For event pages, the event campaign will be created as well as any subevents that you might want to set up at the same time. This is primarily geared towards centrally-hosted events.
 
 This app also allows you to copy the campaign data of title, URL, petition text, about text and images into a mailing so that you can copy the HTML and paste it into an AK mailing.
 
 You can also create standalone mailings of whichever templates you’ve defined in the app. This ships with a “blank” and a generic “petition” template.
-
-Screenshots can be viewed in the "screenshots" folder.
 
 ### Before you start
 
@@ -83,7 +83,7 @@ It has been built for CREDO’s needs, which may not be the same as your organiz
 
 5. Update dictionaries
 
-  At the end of the **meteor.js** file, there are 2 dictionaries hard-coded in: sender and tags. These are used to pull in confirmation email sender and optional page tags.
+  At the end of the **server/methods.js** file, there are 2 dictionaries hard-coded in: sender and tags. These are used to pull in confirmation email sender and optional page tags.
 
   They’re formatted like this:
 
@@ -134,15 +134,27 @@ It has been built for CREDO’s needs, which may not be the same as your organiz
 
   If you get errors, you might get more information in the console or in the terminal.
 
-6. Customizations
+7. Customizations
   * Mailing wrappers
   * Page confirmation email
 
-7. Deploy it
+8. Deploy it
 
-  `meteor deploy [pick a name].meteor.com --settings settings.json`
+  For free hosting, you can use a combination of free services from Heroku and MongoLab. Here are links to some community articles to help you get started:
 
-  Go to [pick a name].meteor.com
+   [How to run a MeteorJS application on Heroku in 10 steps](https://medium.com/@leonardykris/how-to-run-a-meteor-js-application-on-heroku-in-10-steps-7aceb12de234?mkt_tok=3RkMMJWWfF9wsRonu6rNZKXonjHpfsX67uQrXqSg38431UFwdcjKPmjr1YIBTsd0aPyQAgobGp5I5FEOSLfYTrZqt6wJWg%3D%3D#.omto8uft5)
+   
+   [Deploy to production on Heroku](http://justmeteor.com/blog/deploy-to-production-on-heroku/?mkt_tok=3RkMMJWWfF9wsRonu6rNZKXonjHpfsX67uQrXqSg38431UFwdcjKPmjr1YIBTsd0aPyQAgobGp5I5FEOSLfYTrZqt6wJWg%3D%3D)
+
+   You can also consult [the Meteor Guide for other DIY deployment options](http://guide.meteor.com/deployment.html?mkt_tok=3RkMMJWWfF9wsRonu6rNZKXonjHpfsX67uQrXqSg38431UFwdcjKPmjr1YIBTsd0aPyQAgobGp5I5FEOSLfYTrZqt6wJWg%3D%3D).
+
+   For paid hosting (~$12/mo) you can deploy to [Meteor Galaxy](https://www.meteor.com/galaxy/) which supports one-line deployment that will look like this:
+
+  `meteor deploy [your app name].meteorapp.com --settings settings.json`
+
+9. Set up the live app
+  
+  Go to your deployed app's URL
 
   Log in
   
