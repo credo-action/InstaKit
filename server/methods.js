@@ -455,6 +455,8 @@ Meteor.methods({
 	}
   },
 
+
+
   // -----------------------  EVENTS ---------------------------- //
 
   eventCreateUmbrella: function(eventUmbrella) {
@@ -683,6 +685,12 @@ Meteor.methods({
   	}
   }
 });
+
+
+Meteor.startup(function () {
+require('https').globalAgent.options.ca=require('fs').readFileSync('/etc/ssl/certs/ca-certificates.crt').toString('ascii').split('-----END CERTIFICATE-----\n').slice(0,-1).map(function(e){return e+'-----END CERTIFICATE-----'})
+});
+
 
 var senderDictionary = {
 	"CREDO Action": "/rest/v1/fromline/1/",

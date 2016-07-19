@@ -1,6 +1,13 @@
 Meteor.startup(function () {
   Session.set("emailNotSaved",false);
+  
 });
+
+
+
+
+
+
 
 // subscribe to the files collection (ie database)
 Meteor.subscribe('files');

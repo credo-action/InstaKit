@@ -12,4 +12,6 @@ http
 iron:router
 sacha:spin
 uzumaxy:prevent-backspace
-standard-minifiers
+standard-minifier-css
+standard-minifier-js
+modules

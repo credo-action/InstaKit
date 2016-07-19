@@ -116,3 +116,4 @@ initSessionVarsForPageCompose = function () {
   Session.set("pageNotSaved",false);
   Session.set("saveDialog",false);
 };
+
