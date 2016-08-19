@@ -22,7 +22,7 @@
 
 <template name="link">
 	<div class="composePageInputLabel"><label for="link_text">Page full URL:</label></div>
-	<div class="composePageInputText"><input type="text" id="link_text" class="{{highlight "link"}}" value="{{#if getValue "link"}}{{getValue "link"}}{{else}}{{#if wrapperStyle "call"}}http://act.credoaction.com/call/{{else}}{{#if wrapperStyle "event"}}http://act.credoaction.com/event/{{else}}{{#if wrapperStyle "mobilize"}}http://www.credomobilize.com/petitions/?source=CREDO{{else}}{{#if wrapperStyle "superpacFundraiser"}}https://secure.actblue.com/contribute/page/savethesenate{{else}}http://act.credoaction.com/sign/{{/if}}{{/if}}{{/if}}{{/if}}{{/if}}"></div>
+	<div class="composePageInputText"><input type="text" id="link_text" class="{{highlight "link"}}" value="{{#if getValue "link"}}{{getValue "link"}}{{else}}{{#if wrapperStyle "call"}}https://act.credoaction.com/call/{{else}}{{#if wrapperStyle "event"}}https://act.credoaction.com/event/{{else}}{{#if wrapperStyle "mobilize"}}https://www.credomobilize.com/petitions/?source=CREDO{{else}}{{#if wrapperStyle "superpacFundraiser"}}https://secure.actblue.com/contribute/page/savethesenate{{else}}https://act.credoaction.com/sign/{{/if}}{{/if}}{{/if}}{{/if}}{{/if}}"></div>
 	<div class="clear"></div>
 </template>
 
