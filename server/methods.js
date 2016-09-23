@@ -147,6 +147,7 @@ var updatePageFields = function(page,resource,sp) {
                       			 	email_body: page.pageImportConfEmailBody,
                       			 	email_from_line: senderDictionary[page.pageConfEmailSender],
                       			 	email_subject: page.pageConfEmailSL,
+                      			 	email_wrapper: 1,
                       			 	send_email: true,
                       			 	send_taf: true,
                       			 	taf_body: updateTAFCopyForAK(page.pageTAFCopy),
@@ -600,6 +601,7 @@ Meteor.methods({
 		                  			page: eventSignupURL,
 		              			 	email_body: eventUmbrella.pageImportConfEmailBody,
 		              			 	email_subject: eventUmbrella.pageConfEmailSL,
+		              			 	email_wrapper: 1,
 		              			 	send_email: true,
 		              			 	send_taf: true,
 //		              			 	taf_body: updateTAFCopyForAK(page.pageTAFCopy),
@@ -694,7 +696,7 @@ require('https').globalAgent.options.ca=require('fs').readFileSync('/etc/ssl/cer
 
 var senderDictionary = {
 	"CREDO Action": "/rest/v1/fromline/1/",
-	"Elijah Zarlin, CREDO Action": "/rest/v1/fromline/4/",
+	"Nicole Regalado, CREDO Action": "/rest/v1/fromline/22/",
 	"Heidi Hess, CREDO Action": "/rest/v1/fromline/15/",
 	"Jordan Krueger, CREDO Action": "/rest/v1/fromline/2/",
 	"Josh Nelson, CREDO Action": "/rest/v1/fromline/8/",

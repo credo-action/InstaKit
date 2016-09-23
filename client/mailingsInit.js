@@ -40,12 +40,12 @@ setSessionVarsForNewEmail = function () {
     Session.set("signature", "");
   else if (Meteor.user().profile.name == "Mark Ristaino")
     Session.set('signature', "Mark Ristaino, Emperor");
-  else if (Meteor.user().profile.name == 'Elijah Zarlin')
-    Session.set("signature", "Elijah Zarlin, Director of Climate Campaigns");
+  else if (Meteor.user().profile.name == 'Josh Nelson')
+    Session.set("signature", "Josh Nelson, Deputy Politcal Director");
   else if (Meteor.user().profile.name == 'Heidi Hess')
     Session.set("signature", "Heidi Hess, Senior Campaign Manager");
   else if (Meteor.user().profile.name == 'Murshed Zaheed')
-    Session.set("signature", "Murshed Zaheed, Deputy Political Director");
+    Session.set("signature", "Murshed Zaheed, Political Director");
   else Session.set('signature', Meteor.user().profile.name + ', Campaign Manager');
   Session.set("footnotes", "");
   Session.set("facebook", "");
@@ -69,8 +69,8 @@ setSessionVarsForEmailFromPage = function (obj) {
   Session.set("footnotes", "");
   if (Meteor.user().profile.name == "Mark Ristaino")
     Session.set('signature', "Mark Ristaino, Emperor");
-  else if (Meteor.user().profile.name == 'Elijah Zarlin')
-    Session.set("signature", "Elijah Zarlin, Director of Climate Campaigns");
+  else if (Meteor.user().profile.name == 'Josh Nelson')
+    Session.set("signature", "Josh Nelson, Deputy Politcal Director");
   else if (Meteor.user().profile.name == 'Heidi Hess')
     Session.set("signature", "Heidi Hess, Senior Campaign Manager");
   else if (Meteor.user().profile.name == 'Murshed Zaheed')
