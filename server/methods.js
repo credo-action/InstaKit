@@ -285,6 +285,7 @@ var updatePageFieldsForCreatedPage = function(page,loc,sp) {
                       			 	email_body: page.pageImportConfEmailBody,
                       			 	email_from_line: senderDictionary[page.pageConfEmailSender],
                       			 	email_subject: page.pageConfEmailSL,
+                      			 	email_wrapper: 1,
                       			 	taf_body: updateTAFCopyForAK(page.pageTAFCopy),
                       			 	taf_subject: page.pageTAFSL,
                       			 	url: sp
