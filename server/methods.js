@@ -702,7 +702,8 @@ var senderDictionary = {
 	"Jordan Krueger, CREDO Action": "/rest/v1/fromline/2/",
 	"Josh Nelson, CREDO Action": "/rest/v1/fromline/8/",
 	"Murshed Zaheed, CREDO Action": "/rest/v1/fromline/5/",
-	"Tessa Levine, CREDO Action": "/rest/v1/fromline/21/"
+	"Tessa Levine, CREDO Action": "/rest/v1/fromline/21/",
+	"Brandy Doyle, CREDO Action": "/rest/v1/fromline/23/"
 };
 
 
