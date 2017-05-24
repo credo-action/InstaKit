@@ -1,0 +1,79 @@
+<!-- PETITION email wrapper -->
+<template name="stevesTreatmentemailWrapperBody">
+    <tr style="border:none;Margin:0 auto;background-color:#242326;">
+		<td width="100%" align="center" style="border:none;" border="0">	
+			<!-- HEADER IMAGE table -->
+			<table cellpadding="0" cellspacing="0" style="Margin:0 auto; border:none;max-width:600px;width:100%;background-color:#242326;">
+
+				<!-- HEADER IMAGE-->
+				<tr>
+					<td cellpadding="0" cellspacing="0" border="0" align="center" valign="top" >
+						<a href="{{getValue "link"}}"><img src="{{getValue "image600"}}" border="0" alt="CREDO action" style="display: block; width: 100%;max-width:600px;border:0px;" width="600px" ></a>
+					</td>
+	           <!-- END HEADER IMAGE-->
+				</tr>
+            </table>
+        </td>
+    </tr>
+    
+{{#if getValue "headline"}}
+    <tr style="border:none;Margin:0 auto;background-color:#000000;">
+		<td width="100%" align="center" style="border:none;" border="0">	
+			<!-- start inner table -->
+			<table cellpadding="0" cellspacing="0" style="Margin:0 auto; background-color:#000000; border:none;max-width:600px;width:100%;">
+				<!-- HEADLINE-->
+				<tr>
+					<td cellpadding="0" cellspacing="0" border="0" align="center" valign="top" style="color:#efefef;font-family:Arial;font-size:16px;padding:20px;">
+                        <p><strong><a href="{{getValue "link"}}" style="color:#efefef;font-family:Arial;font-size:16px;text-decoration:none;">{{removeBackslash "headline"}}</a></strong></p>
+					</td>
+				</tr>
+                <!-- END HEADLINE-->
+            </table>
+        </td>
+    </tr>
+{{/if}}
+{{#if getValue "petition"}}
+    <tr style="border:none;Margin:0 auto;background-color:#89b3c9;">
+		<td width="100%" align="center" style="border:none;" border="0">	
+			<!-- start inner table -->
+			<table cellpadding="0" cellspacing="0" style="Margin:0 auto; background:#89b3c9; border:none;max-width:600px;width:100%;text-align:left;">
+                <tr>
+					<td width="100%" border="0" style="border:none;padding:20px;font-size:14px;color:#000000;line-height:20px;font-family:Arial;">
+                        <p style="font-family:arial;font-size: 12px; line-height: 15px; color: #63687c;"><strong>{{#if getValue "statement_leadin"}}{{removeBackslash "statement_leadin"}}{{else}}The petition reads:{{/if}}</strong></p>
+                        <p><strong>{{removeBackslash "petition" }}</strong></p>
+                        <p style="font-family:arial;font-size: 12px; line-height: 15px; color: #63687c;"><strong>Add your name:</strong></p>
+                        <a href="{{getValue "link"}}"><img src="https://d2omw6a1nm6pnh.cloudfront.net/images/btn-sign-the-petition-146x452x.png" alt="sign the petiton" width="146px" style="display: block; width: 100%;max-width:146px;border:0px;" ></a>
+					</td>
+				</tr>
+            </table>
+        </td>
+    </tr>
+{{/if}}
+    <tr style="border:none;Margin:0 auto;background-color:#ffffff;">
+		<td width="100%" align="center" style="border:none;" border="0">	
+			<!-- start inner table -->
+			<table cellpadding="0" cellspacing="0" style="Margin:0 auto; background:#ffffff; border:none;max-width:600px;width:100%;text-align:left;">
+                <tr>
+					<td width="100%" border="0" style="border:none;padding:20px;font-size:13px;font-family:Arial;color:#63687c;line-height:20px;">                  
+                        
+                        
+						<!-- CONTENT -->
+                        
+                        <p>Dear {&#123; user.first_name|default:"Friend" &#125;},</p>
+
+                        {{#markdown}}{{getValue "markdown_data" }}{{/markdown}}
+                        {{#if getValue "signature"}}<p>{{ getValue "signature"}}<br />
+                        <a href="http://www.credoaction.com">CREDO Action from Working Assets</a>
+                        </p>{{/if}}
+                        
+                        <p>Add your name:<br />
+                         <a href="{{getValue "link"}}"><img src="https://d2omw6a1nm6pnh.cloudfront.net/images/btn-sign-the-petition-146x452x.png" alt="sign the petiton" width="146px" style="display: block; width: 100%;max-width:146px;border:0px;" ></a></p>
+                        
+                        {{#if getValue "footnotes"}}{{#markdown}}{{getValue "footnotes" }}{{/markdown}}{{/if}}
+						<!-- END BLOCK CONTENT -->
+                    </td>
+				</tr>
+			</table> <!-- end inner table -->
+		</td>
+	</tr>
+</template>

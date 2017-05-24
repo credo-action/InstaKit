@@ -16,6 +16,12 @@ Template.headline.events({
   }
 });
 
+Template.image600.events({
+  'blur input[type=text]': function() {
+    Session.set("image600", $('#image600').val());
+  }
+});
+
 Template.statement_leadin.events({
   'blur input[type=text]': function() {
     Session.set("statement_leadin", $('#statement_leadin_text').val());
@@ -94,6 +100,7 @@ makeEmailFromSession = function() {
     type: Session.get("templateChooser"),
     notes: Session.get("notes"),
     headline: Session.get("headline"),
+    image600: Session.get("image600"),
     topper: Session.get("topper"),
     statement_leadin: Session.get("statement_leadin"),
     petition: Session.get("petition"),

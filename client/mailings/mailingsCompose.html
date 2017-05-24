@@ -47,6 +47,15 @@
 		{{> signature }}
 		{{> footnotes}}
 		{{> twitter}}
+    {{else}}{{#if wrapperStyle "stevesTreatment"}}
+		{{> headline}}
+        {{> image600}}
+		{{> statement_leadin}}
+		{{> petition}}
+		{{> link}}
+		{{> markdown_input}}
+		{{> signature }}
+		{{> footnotes}}
 	{{else}}{{#if wrapperStyle "takeaction"}}
 		{{> headline}}
 		{{> statement_leadin}}
@@ -108,7 +117,7 @@
 		{{> markdown_input}}
 		{{> signature }}
 		{{> footnotes}}
-	{{/if}}{{/if}}{{/if}}{{/if}}{{/if}}{{/if}}{{/if}}{{/if}}
+	{{/if}}{{/if}}{{/if}}{{/if}}{{/if}}{{/if}}{{/if}}{{/if}}{{/if}}
 </template>
 
 <template name="display">
@@ -129,6 +138,8 @@
 	{{unformattedHtml "petition" }}
 {{else}} {{#if wrapperStyle "takeaction"}}
 	{{unformattedHtml "takeAction" }}
+{{else}} {{#if wrapperStyle "stevesTreatment"}}
+	{{unformattedHtml "stevesTreatment" }}
 {{else}} {{#if wrapperStyle "public comment"}}
 	{{unformattedHtml "publicComment" }}
 {{else}} {{#if wrapperStyle "call"}}
@@ -141,7 +152,7 @@
 	{{unformattedHtml "blank" }}
 {{else}} {{#if wrapperStyle "superpacFundraiser"}}
 	{{unformattedHtml "superpacFundraiser" }}
-{{/if}}{{/if}}{{/if}}{{/if}}{{/if}}{{/if}}{{/if}}{{/if}}
+{{/if}}{{/if}}{{/if}}{{/if}}{{/if}}{{/if}}{{/if}}{{/if}}{{/if}}
 </pre>
 		</div>
 	{{/if}}
@@ -151,13 +162,15 @@
 	<!-- start inner table -->
 	<table width="100%" cellpadding="0" cellspacing="0" style="padding:12px 0px; margin:0 auto; background:#fff; font-family: Arial, helvetica, sans-serif; font-size: 13px; line-height: 18px; text-align:left; height: 45px;">
 		<!-- CREDO logo -->
-		<tr><td style="background:#FF6319;text-align:left; padding-left:12px; line-height:40px;padding-top:5px;color:#FFF;font-weight:bold; vertical-align:middle; height:45px;font-size:17px;font-weight:bold;">
-		    <img src="//d2omw6a1nm6pnh.cloudfront.net/images/logo-credo-120.png" border="0" alt="CREDO action" style="vertical-align:middle;min-width:120px;">
+		<tr><td style="background:#FF6319;text-align:left; padding-left:12px; line-height:40px;padding-top:5px;color:#FFF;font-weight:bold; vertical-align:middle; height:45px;font-size:17px;font-weight:bold;{{#if wrapperStyle "stevesTreatment"}}display:none;{{/if}}">
+		    <img src="//d2omw6a1nm6pnh.cloudfront.net/images/logo-credo-120.png" border="0" alt="CREDO action" style="vertical-align:middle;min-width:120px;{{#if wrapperStyle "stevesTreatment"}}display:none;{{/if}}" >
 		</td></tr>
 		{{#if wrapperStyle "petition"}}
 			{{> petitionEmailWrapperBody}}
 		{{else}} {{#if wrapperStyle "takeaction"}}
 			{{> takeActionEmailWrapperBody}}
+        {{else}} {{#if wrapperStyle "stevesTreatment"}}
+			{{> stevesTreatmentemailWrapperBody}}
 		{{else}} {{#if wrapperStyle "public comment"}}
 			{{> publicCommentEmailWrapperBody}}
 		{{else}} {{#if wrapperStyle "call"}}
@@ -166,7 +179,7 @@
 			{{> eventEmailWrapperBody}}
 		{{else}} {{#if wrapperStyle "blank"}}
 			{{> blankEmailWrapperBody}}
-		{{/if}}{{/if}}{{/if}}{{/if}}{{/if}}{{/if}}
+		{{/if}}{{/if}}{{/if}}{{/if}}{{/if}}{{/if}}{{/if}}
 		<tr><td style="font-size:12px;padding: 0px 12px;">
 		© 2015 CREDO. All rights reserved.
 		</td></tr>

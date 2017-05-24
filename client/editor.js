@@ -73,6 +73,7 @@ UI.registerHelper("unformattedHtml", function(wrapper) {
     case "event": UI.insert(UI.render(Template.eventEmailWrapperBody), div); break;
     case "mobilize": UI.insert(UI.render(Template.mobilizeEmailWrapperBody), div); break;
     case "petition": UI.insert(UI.render(Template.petitionEmailWrapperBody), div); break;
+    case "stevesTreatment": UI.insert(UI.render(Template.stevesTreatmentemailWrapperBody), div); break;
     case "publicComment": UI.insert(UI.render(Template.publicCommentEmailWrapperBody), div); break;
     case "takeAction": UI.insert(UI.render(Template.takeActionEmailWrapperBody), div); break;
     case "superpacFundraiser": UI.insert(UI.render(Template.superpacFundraiserEmailWrapperBody), div); break;

@@ -58,6 +58,13 @@ Template.filePage.events({
                 {query: {template: 'petition'}}
               );
   },
+  'click #templateChooser_stevesTreatment': function(evt) {
+    evt.preventDefault();
+    Router.go('compose',
+                {},
+                {query: {template: 'stevesTreatment'}}
+              );
+  },
   'click #templateChooser_takeaction': function(evt) {
     evt.preventDefault();
     Router.go('compose',

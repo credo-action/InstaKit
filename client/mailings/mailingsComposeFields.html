@@ -10,6 +10,12 @@
 	<div class="clear"></div>
 </template>
 
+<template name="image600">
+	<div class="composePageInputLabel"><label for="image600">{{#if wrapperStyle "blank"}}File name:{{else}}600px image:{{/if}}</label></div>
+	<div class="composePageInputText"><input type="text" id="image600" value="{{getValue "image600"}}" autofocus class="{{highlight "image600"}}"></div>
+	<div class="clear"></div>
+</template>
+
 <template name="statement_leadin">
 	<div class="composePageInputLabel"><label for="statement_leadin_text">Statement lead-in:</label></div>
 	<div class="composePageInputText"><input type="text" id="statement_leadin_text" class="{{highlight "statement_leadin"}}" value="{{#if wrapperStyle "petition"}}{{#if getValue "statement_leadin"}}{{getValue "statement_leadin"}}{{else}}The petition reads:{{/if}}{{else}}{{getValue "statement_leadin"}}{{/if}}"></div>
