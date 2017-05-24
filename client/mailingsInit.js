@@ -41,7 +41,7 @@ setSessionVarsForNewEmail = function () {
   else if (Meteor.user().profile.name == "Mark Ristaino")
     Session.set('signature', "Mark Ristaino, Emperor");
   else if (Meteor.user().profile.name == 'Josh Nelson')
-    Session.set("signature", "Josh Nelson, Deputy Politcal Director");
+    Session.set("signature", "Josh Nelson, Deputy Political Director");
   else if (Meteor.user().profile.name == 'Heidi Hess')
     Session.set("signature", "Heidi Hess, Senior Campaign Manager");
   else if (Meteor.user().profile.name == 'Murshed Zaheed')
@@ -70,7 +70,7 @@ setSessionVarsForEmailFromPage = function (obj) {
   if (Meteor.user().profile.name == "Mark Ristaino")
     Session.set('signature', "Mark Ristaino, Emperor");
   else if (Meteor.user().profile.name == 'Josh Nelson')
-    Session.set("signature", "Josh Nelson, Deputy Politcal Director");
+    Session.set("signature", "Josh Nelson, Deputy Political Director");
   else if (Meteor.user().profile.name == 'Heidi Hess')
     Session.set("signature", "Heidi Hess, Senior Campaign Manager");
   else if (Meteor.user().profile.name == 'Murshed Zaheed')
