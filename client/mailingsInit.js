@@ -9,6 +9,7 @@ setSessionVarsForEmail = function (obj) {
   Session.set("notes", obj.notes);
   Session.set("headline", obj.headline);
   Session.set("image600", obj.image600);
+  Session.set("hexcode", obj.hexcode);
   Session.set("statement_leadin", obj.statement_leadin);
   Session.set("petition", obj.petition);
   Session.set("link", obj.link);
@@ -31,6 +32,7 @@ setSessionVarsForNewEmail = function () {
   Session.set("notes", "");
   Session.set("headline", "");
   Session.set("image600", "");
+  Session.set("hexcode", "");
   Session.set("statement_leadin", "");
   Session.set("petition", "");
   if (Session.equals("templateChooser", "superpacFundraiser"))
