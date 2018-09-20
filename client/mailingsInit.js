@@ -45,11 +45,13 @@ setSessionVarsForNewEmail = function () {
   else if (Meteor.user().profile.name == "Mark Ristaino")
     Session.set('signature', "Mark Ristaino, Emperor");
   else if (Meteor.user().profile.name == 'Josh Nelson')
-    Session.set("signature", "Josh Nelson, Deputy Political Director");
+    Session.set("signature", "Josh Nelson, Co-Director");
   else if (Meteor.user().profile.name == 'Heidi Hess')
-    Session.set("signature", "Heidi Hess, Senior Campaign Manager");
-  else if (Meteor.user().profile.name == 'Murshed Zaheed')
-    Session.set("signature", "Murshed Zaheed, Political Director");
+    Session.set("signature", "Heidi Hess, Co-Director");
+  else if (Meteor.user().profile.name == 'Kaili Lambe')
+      Session.set("signature", "Kaili Lambe, Director of Organizing");
+  else if (Meteor.user().profile.name == 'Lianna McSwain')
+          Session.set("signature", "Lianna McSwain, Data Analytics Manager");
   else Session.set('signature', Meteor.user().profile.name + ', Campaign Manager');
   Session.set("footnotes", "");
   Session.set("facebook", "");
@@ -74,11 +76,13 @@ setSessionVarsForEmailFromPage = function (obj) {
   if (Meteor.user().profile.name == "Mark Ristaino")
     Session.set('signature', "Mark Ristaino, Emperor");
   else if (Meteor.user().profile.name == 'Josh Nelson')
-    Session.set("signature", "Josh Nelson, Deputy Political Director");
+    Session.set("signature", "Josh Nelson, Co-Director");
   else if (Meteor.user().profile.name == 'Heidi Hess')
-    Session.set("signature", "Heidi Hess, Senior Campaign Manager");
-  else if (Meteor.user().profile.name == 'Murshed Zaheed')
-    Session.set("signature", "Murshed Zaheed, Political Director");
+    Session.set("signature", "Heidi Hess, Co-Director");
+  else if (Meteor.user().profile.name == 'Kaili Lambe')
+    Session.set("signature", "Kaili Lambe, Director of Organizing");
+  else if (Meteor.user().profile.name == 'Lianna McSwain')
+      Session.set("signature", "Lianna McSwain, Data Analytics Manager");
   else Session.set('signature', Meteor.user().profile.name + ', Campaign Manager');
   Session.set("facebook", "");
   var twitter = obj.pageTwitterCopy.replace(/{ *LINK *}/i, obj.AKpageBitly);
@@ -94,5 +98,3 @@ initSessionVarsForEmailCompose = function () {
   Session.set("emailNotSaved",false);
   Session.set("saveDialog",false);
 };
-
-

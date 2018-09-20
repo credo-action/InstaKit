@@ -61,7 +61,7 @@ var updatePageShare = function(page, loc, bitly) {
                       			name: page.pageName,
                       			title: page.pageTitle,
                       			allow_multiple_responses: false,
-                      			fields: { 
+                      			fields: {
                       			 	"image_email_180": page.pageGraphicEmail,
 									"image_homepage_100": page.pageGraphicHomePage,
 									"image_facebook_114": page.pageGraphicFacebook,
@@ -90,8 +90,8 @@ var updatePageShare = function(page, loc, bitly) {
 								], // end required_fields
 								tags: setTags(page.pageTags)
                       		} // end data
-                      });		
-		return true; 
+                      });
+		return true;
 	} catch (e) {
 		if (e.response.statusCode && e.response.statusCode === 400)
         	throw new Meteor.Error(e.response.statusCode, e.response.content, e.response);
@@ -111,11 +111,11 @@ var updatePageForm = function(page,resource) {
 		  						  headers: {"Content-type": "application/json"},
 		                          data: {about_text: page.pageImportAboutText, // "Import" text is HTML version
 		                      			 page: resource,
-		                      			 statement_leadin: page.pageImportStatementLeadIn, 
+		                      			 statement_leadin: page.pageImportStatementLeadIn,
 		                      			 letter_text: page.pageStatementText, // letter_text does not take HTML
-		                      			 thank_you_text: "thank you"					             
+		                      			 thank_you_text: "thank you"
 		                      			} // end data
-		                      });		
+		                      });
 	  else var createPageForm = HTTP.call("POST", Meteor.settings.actionKitApi.actionKitUrl+"rest/v1/petitionform/",
 	  						 {auth: Meteor.settings.actionKitApi.actionKitAuth,
 	  						  headers: {"Content-type": "application/json"},
@@ -123,9 +123,9 @@ var updatePageForm = function(page,resource) {
 	                      			 page: resource,
 	                      			 statement_leadin: page.pageImportStatementLeadIn,
 	                      			 statement_text: page.pageImportStatementText, // push in HTML version of text
-	                      			 thank_you_text: "thank you"					             
+	                      			 thank_you_text: "thank you"
 	                      			} // end data
-	                      });		
+	                      });
 	  console.log(createPageForm.headers.location);
 	  return createPageForm.headers.location;
 	} catch (e) {
@@ -196,7 +196,7 @@ var updatePageShareForCreatedPage = function(page, loc, bitly) {
                       			name: page.pageName,
                       			title: page.pageTitle,
                       			allow_multiple_responses: false,
-                      			fields: { 
+                      			fields: {
                       			 	"image_email_180": page.pageGraphicEmail,
 									"image_homepage_100": page.pageGraphicHomePage,
 									"image_facebook_114": page.pageGraphicFacebook,
@@ -225,8 +225,8 @@ var updatePageShareForCreatedPage = function(page, loc, bitly) {
 								], // end required_fields
 								tags: setTags(page.pageTags)
                       		} // end data
-                      });		
-		return true; 
+                      });
+		return true;
 	} catch (e) {
 		console.log("error in updatePageShareForCreatedPage");
 		console.log(e.response);
@@ -249,20 +249,20 @@ var updatePageFormForCreatedPage = function(page,loc) {
 	                          data: {about_text: page.pageImportAboutText,
 	                      			 page: page.AKpageResourceURI,
 	                      			 statement_leadin: page.pageImportStatementLeadIn,
-	                      			 letter_text: page.pageStatementText, // no HTML for letter_text	             
+	                      			 letter_text: page.pageStatementText, // no HTML for letter_text
 	                      			 thank_you_text: "thank you"
 	                      			} // end data
-	                     	 });		
+	                     	 });
 	  else var updatePageForm = HTTP.call("PUT", loc,
 	  						 {auth: Meteor.settings.actionKitApi.actionKitAuth,
 	  						  headers: {"Content-type": "application/json"},
 	                          data: {about_text: page.pageImportAboutText,
 	                      			 page: page.AKpageResourceURI,
 	                      			 statement_leadin: page.pageImportStatementLeadIn,
-	                      			 statement_text: page.pageImportStatementText,			             
+	                      			 statement_text: page.pageImportStatementText,
 	                      			 thank_you_text: "thank you"
 	                      			} // end data
-	                     	 });		
+	                     	 });
 	  return true;
 	} catch (e) {
 		console.log("error in updatePageFormForCreatedPage");
@@ -343,7 +343,7 @@ var updateShareProgressPageForCreatedPage = function(page) {
 			if (sp.data.message && sp.data.message.variants[0])
 				throw new Meteor.Error(500, sp.data.message.variants[0], sp);
 			else throw new Meteor.Error(500, sp.data.message);
-		}	
+		}
 	} catch (e) {
 		if (sp.data.message && sp.data.message.variants[0])
 			throw new Meteor.Error(500, sp.data.message.variants[0], sp);
@@ -361,22 +361,22 @@ Meteor.methods({
   createAKpage: function (page) {
 	  // create new petition page.
 	try {
-		if (page.pageType === "letter") 
+		if (page.pageType === "letter")
 			var createPage = HTTP.call("POST", Meteor.settings.actionKitApi.actionKitUrl+"rest/v1/letterpage/",
 	  						 {auth: Meteor.settings.actionKitApi.actionKitAuth,
 	  						  headers: {"Content-type": "application/json"},
 	                          data: {
-	                      			name: page.pageName       
+	                      			name: page.pageName
 	                      		} // end data
 	                      });
 		else var createPage = HTTP.call("POST", Meteor.settings.actionKitApi.actionKitUrl+"rest/v1/petitionpage/",
 	  						 {auth: Meteor.settings.actionKitApi.actionKitAuth,
 	  						  headers: {"Content-type": "application/json"},
 	                          data: {
-	                      			name: page.pageName       
+	                      			name: page.pageName
 	                      		} // end data
-	                      });		
-		return createPage.headers.location; 
+	                      });
+		return createPage.headers.location;
 	} catch (e) {
 		console.log(e.response);
 		if (e.response && e.response.statusCode && e.response.statusCode === 400)
@@ -399,7 +399,7 @@ Meteor.methods({
   	updatePageFields(page, AK.resource_uri, sp.share_page_url);
   	var pageObj = {};
   	pageObj.AKpage = Meteor.settings.actionKitApi.actionKitUrl+"sign/" + page.pageName;
-  	if (page.pageType === "letter") 
+  	if (page.pageType === "letter")
   		pageObj.AKpageEdit = Meteor.settings.actionKitApi.actionKitUrl+"admin/core/letterpage/" + AK.id;
   	else pageObj.AKpageEdit = Meteor.settings.actionKitApi.actionKitUrl+"admin/core/petitionpage/" + AK.id;
   	pageObj.SPpage = sp.share_page_url;
@@ -437,7 +437,7 @@ Meteor.methods({
 
 	  	var pageObj = {};
 	  	pageObj.AKpage = Meteor.settings.actionKitApi.actionKitUrl+"sign/" + page.pageName;
-	  	if (page.pageType === "letter") 
+	  	if (page.pageType === "letter")
 	  		pageObj.AKpageEdit = Meteor.settings.actionKitApi.actionKitUrl+"admin/core/letterpage/" + page.AKpageID;
 	  	else pageObj.AKpageEdit = Meteor.settings.actionKitApi.actionKitUrl+"admin/core/petitionpage/" + page.AKpageID;
 	  	pageObj.SPpage = sp.share_page_url;
@@ -555,7 +555,7 @@ Meteor.methods({
   		var eventUmbrellaURI = eventUmbrella.eventUmbrellaCampaignURL.replace(Meteor.settings.actionKitApi.actionKitUrl,"");
 
   		console.log(eventUmbrellaURI);
-  		
+
   		// REMEMBER TO CHANGE THIS BACK TO CREDO FROM ROBOTIC DOGS AND USER AUTH
   		var createEventSignupPage = HTTP.call("POST", Meteor.settings.actionKitApi.actionKitUrl+"rest/v1/eventsignuppage/",
 	  						 {auth: Meteor.settings.actionKitApi.actionKitAuth,
@@ -625,16 +625,16 @@ Meteor.methods({
         	throw new Meteor.Error(500, "Unknown error creating event signup page", e.response.data);
 
   	}
-  }, 
+  },
   eventCreateSubEvent: function(subEvent) {
   	try {
   		var eventUmbrellaURI = subEvent.eventUmbrellaCampaignURL.replace(Meteor.settings.actionKitApi.actionKitUrl,"");
 
-		var host = HTTP.call("GET", 
+		var host = HTTP.call("GET",
 			Meteor.settings.actionKitApi.actionKitUrl+"rest/v1/user/?email=" + subEvent.subEventHostEmail,
 			{auth: Meteor.settings.actionKitApi.actionKitAuth}).data;
 
-		console.log(host.objects[0].resource_uri);  
+		console.log(host.objects[0].resource_uri);
 
   		var createSubEvent = HTTP.call("POST", Meteor.settings.actionKitApi.actionKitUrl+"rest/v1/event/",
 	  						 {auth: Meteor.settings.actionKitApi.actionKitAuth,
@@ -701,8 +701,8 @@ var senderDictionary = {
 	"Heidi Hess, CREDO Action": "/rest/v1/fromline/15/",
 	"Jordan Krueger, CREDO Action": "/rest/v1/fromline/2/",
 	"Josh Nelson, CREDO Action": "/rest/v1/fromline/8/",
-	"Murshed Zaheed, CREDO Action": "/rest/v1/fromline/5/",
-	"Tessa Levine, CREDO Action": "/rest/v1/fromline/21/",
+	"Ari Chopelas, CREDO Action": "/rest/v1/fromline/26/",
+	"Lianna McSwain, CREDO Action": "/rest/v1/fromline/25/",
 	"Brandy Doyle, CREDO Action": "/rest/v1/fromline/23/"
 };
 
